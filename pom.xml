@@ -11,11 +11,35 @@
   <artifactId>webtestpresenter</artifactId>
   <packaging>hpi</packaging>
   <version>0.24-SNAPSHOT</version>
-  <url>http://wiki.hudson-ci.org/display/HUDSON/WebTest+Presenter+Plugin</url>
+  <url>http://wiki.jenkins-ci.org/display/JENKINS/WebTest+Presenter+Plugin</url>
   <developers>
     <developer>
       <id>aambrose</id>
       <name>Adam Ambrose</name>
     </developer>
   </developers>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <goals>deploy</goals>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <scm>
+    <connection>scm:svn:https://svn.jenkins-ci.org/trunk/hudson/plugins/YOURPLUGIN</connection>
+    <developerConnection>scm:svn:https://svn.jenkins-ci.org/trunk/hudson/plugins/YOURPLUGIN</developerConnection>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>maven.jenkins-ci.org</id>
+      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases/</url>
+    </repository>
+  </distributionManagement>
+
 </project>
